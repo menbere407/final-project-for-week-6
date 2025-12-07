@@ -4,6 +4,11 @@ function search(event) {
   let cityElement = document.querySelector("#current-city");
   cityElement.innerHTML = searchInputElement.value;
 }
+function searchCity(city) {
+  let apiKey = "24a590f905oaf278eb335019324tb9f1";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon={lon}&lat={lat}&key={key}`;
+  axios.get(apiUrl).then(refreshWeather);
+}
 
 function formatDate(date) {
   let minutes = date.getMinutes();
